@@ -5,7 +5,6 @@ A production-ready backend for logging workouts, tracking nutrition, and viewing
 ## Quick Start
 ```bash
 npm i
-cp .env.example .env
 npm run dev
 ```
 Server runs at `http://localhost:${PORT||4000}`.
@@ -23,4 +22,20 @@ Server runs at `http://localhost:${PORT||4000}`.
 - `GET  /api/progress` — 30-day totals + recommendations
 - `GET  /api/admin/users` — admin-only
 
-> Note: You requested no tests, so this zip contains no `tests/` folder. You can add Jest/Supertest later if needed.
+
+## .env example
+PORT=4000
+MONGO_URI=mongodb://localhost:27017/fittrack
+JWT_SECRET=replace_with_a_long_random_secret
+JWT_EXPIRES_IN=7d
+REDIS_URL=redis://localhost:6379
+SMTP_HOST=smtp.ethereal.email
+SMTP_PORT=587
+SMTP_USER=your_ethereal_user
+SMTP_PASS=your_ethereal_pass
+EMAIL_FROM="FitTrack <no-reply@fittrack.app>"
+EDAMAM_APP_ID=your_app_id
+EDAMAM_APP_KEY=your_app_key
+CLIENT_URL=http://localhost:5173
+
+
